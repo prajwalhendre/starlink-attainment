@@ -8,14 +8,14 @@ A data engineering and business intelligence project modeling Starlink Aviation'
 
 ## The Business Problem
 
-Starlink Aviation is at approximately 9.3% global attainment. Out of every 100 aircraft contracted to receive Starlink connectivity, fewer than 10 are active and billing monthly service revenue. The gap between contracted and active aircraft represents a massive untapped revenue opportunity — and closing it is the core commercial mission of the account management team.
+Starlink Aviation is at approximately 9.3% global attainment. Out of every 100 aircraft contracted to receive Starlink connectivity, fewer than 10 are active and billing monthly service revenue. The gap between contracted and active aircraft represents an untapped revenue opportunity.
 
 **Key numbers this project surfaces:**
 
-- **$699,750,000 potential ARR** — derived from `contracted_fleet × monthly_rate_usd × 12` per airline, using contracted fleet sizes sourced from public press releases and monthly rates from Starlink's published aviation pricing ($12,500–$25,000/month depending on tier)
-- **$52,889,438 monthly revenue gap** — calculated as `potential_mrr - current_mrr` per airline, where current MRR is modeled at 9.3% of contracted fleet (Starlink's publicly reported global attainment rate as of early 2025) times the monthly rate
-- **American Airlines flagged Critical at $12.2M/month, Delta at $10.5M/month** — output of the risk classification script, which flags any account with STC status Pending AND a monthly gap above $10M as Critical. Both airlines have 700–900 plane contracts, rates of $15,000–$16,500/month, and no STCs approved yet.
-- **~18% attainment needed to reach $100M MRR** — back-calculated from total contracted fleet and blended monthly rates across all 10 airlines. I'm citing $100M as a target, so this was modeled directly.
+- **$699,750,000 potential ARR**: derived from `contracted_fleet × monthly_rate_usd × 12` per airline, using contracted fleet sizes sourced from public press releases and monthly rates from Starlink's published aviation pricing ($12,500–$25,000/month depending on tier)
+- **$52,889,438 monthly revenue gap**: calculated as `potential_mrr - current_mrr` per airline, where current MRR is modeled at 9.3% of contracted fleet (Starlink's publicly reported global attainment rate as of early 2025) times the monthly rate
+- **American Airlines flagged Critical at $12.2M/month, Delta at $10.5M/month**: output of the risk classification script, which flags any account with STC status Pending AND a monthly gap above $10M as Critical. Both airlines have 700–900 plane contracts, rates of $15,000–$16,500/month, and no STCs approved yet.
+- **~18% attainment needed to reach $100M MRR**: back-calculated from total contracted fleet and blended monthly rates across all 10 airlines. I'm citing $100M as a target, so this was modeled directly.
 
 ---
 
