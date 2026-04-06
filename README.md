@@ -2,7 +2,7 @@
 
 A data engineering and business intelligence project modeling Starlink Aviation's fleet attainment gap, revenue opportunity, and account-level risk across 10 major airline partners. Built from real FAA registry data, publicly sourced contract information, a six-script Python pipeline, and a Tableau dashboard.
 
-**[View the Live Dashboard →](https://public.tableau.com/views/StarlinkAviation-AccountAttainmentRevenueIntelligence/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
+**[View the Live Dashboard](https://public.tableau.com/views/StarlinkAviation-AccountAttainmentRevenueIntelligence/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
 
 ---
 
@@ -27,13 +27,13 @@ pricing. This represents the revenue ceiling if 100% of contracted aircraft were
 
 The primary activation blocker is the FAA Supplemental Type Certificate (STC). Before Starlink hardware can be installed on any aircraft, the FAA must certify the installation is safe for that specific aircraft model. This process takes 8–18 months and must be completed separately for every aircraft type in an airline's fleet.
 
-United Airlines operates 16+ distinct aircraft models, each requiring its own STC. As of this writing, United has STCs approved for the Embraer 175 and Boeing 737-800, with remaining models in progress. Every other airline in this dataset has all STCs pending. The revenue gap is not a sales problem — it is a regulatory pipeline problem.
+United Airlines operates 16+ distinct aircraft models, each requiring its own STC. As of this writing, United has STCs approved for the Embraer 175 and Boeing 737-800, with remaining models in progress. Every other airline in this dataset has all STCs pending. This highlights the underlying issue that the revenue gap is not a sales problem but rather a regulatory pipeline problem.
 
 ---
 
 ## Data Sources
 
-**FAA Aircraft Registry** — `https://registry.faa.gov/database/ReleasableAircraft.zip`
+**FAA Aircraft Registry**: `https://registry.faa.gov/database/ReleasableAircraft.zip`
 
 Complete database of all US-registered civil aircraft, updated regularly by the FAA. Each row represents one physical aircraft identified by its N-number (tail number). This project downloads and parses the full registry, filtering to 10 target airlines and excluding false positives like training subsidiaries.
 
@@ -70,7 +70,7 @@ I created 6 scripts to fetch and model data.
 
 ## The Dashboard
 
-I built in Tableau Public.
+I built my dashboard in Tableau Public.
 
 **Revenue Gap**: Bar chart sorted by monthly revenue gap, colored by risk tier, with a reference line at $8,333,333 (the monthly equivalent of $100M ARR). American and Delta sit significantly above the target line.
 
@@ -107,6 +107,7 @@ Script 01 downloads ~50MB from the FAA server and may take 30–60 seconds. All 
 ---
 
 ## Project Structure
+```
 starlink_attainment/
 ├── data/
 │   ├── manual/           ← contracts.csv (curated from press releases)
@@ -123,12 +124,13 @@ starlink_attainment/
 │   ├── revenue_model.csv
 │   └── risk_classification.csv
 └── README.md
+```
 
 ---
 
 ## Tech Stack
 
-Python 3 — pandas, numpy, requests · Tableau Public · FAA Aircraft Registry · Public airline press releases
+Python 3 (pandas, numpy, requests) · Tableau Public · FAA Aircraft Registry · Public airline press releases
 
 ---
 
