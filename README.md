@@ -12,16 +12,21 @@ Starlink Aviation is at approximately 9.3% global attainment. Out of every 100 a
 
 **Key numbers this project surfaces:**
 
-- **$699,750,000 potential ARR**: derived from `contracted_fleet × monthly_rate_usd × 12` per airline, using contracted fleet sizes sourced from public press releases and monthly rates from Starlink's published aviation pricing ($12,500–$25,000/month depending on tier)
-- **$52,889,438 monthly revenue gap**: calculated as `potential_mrr - current_mrr` per airline, where current MRR is modeled at 9.3% of contracted fleet (Starlink's publicly reported global attainment rate as of early 2025) times the monthly rate
-- **American Airlines flagged Critical at $12.2M/month, Delta at $10.5M/month**: output of the risk classification script, which flags any account with STC status Pending AND a monthly gap above $10M as Critical. Both airlines have 700–900 plane contracts, rates of $15,000–$16,500/month, and no STCs approved yet.
-- **~18% attainment needed to reach $100M MRR**: back-calculated from total contracted fleet and blended monthly rates across all 10 airlines. I'm citing $100M as a target, so this was modeled directly.
+- **$699,750,000 theoretical maximum ARR**: A bottom-up model calculated as `contracted_fleet × monthly_rate_usd × 12` per airline, using contracted fleet sizes from public press releases and rates from Starlink's published aviation
+pricing. This represents the revenue ceiling if 100% of contracted aircraft were active (which they are not).
+
+- **$52,889,438 monthly revenue gap**: The difference between that ceiling and current estimated MRR, modeled at 9.3% attainment (Starlink's publicly reported global activation rate). This is the revenue sitting uncaptured every month.
+
+- **American Airlines: $12.2M/month gap. Delta: $10.5M/month gap**: The two largest gaps in the portfolio, both flagged Critical because their STC status is fully Pending with no approved aircraft models yet.
+
+- **~18% attainment needed to reach $100M MRR** Back-calculated from the same model. At current contracted fleet sizes and blended rates, that requires activating roughly double the current global rate.
 
 ---
 
-## Why the Gap Exists — The STC Bottleneck
+## Why the Gap Exists: The STC Bottleneck
 
 The primary activation blocker is the FAA Supplemental Type Certificate (STC). Before Starlink hardware can be installed on any aircraft, the FAA must certify the installation is safe for that specific aircraft model. This process takes 8–18 months and must be completed separately for every aircraft type in an airline's fleet.
+
 United Airlines operates 16+ distinct aircraft models, each requiring its own STC. As of this writing, United has STCs approved for the Embraer 175 and Boeing 737-800, with remaining models in progress. Every other airline in this dataset has all STCs pending. The revenue gap is not a sales problem — it is a regulatory pipeline problem.
 
 ---
