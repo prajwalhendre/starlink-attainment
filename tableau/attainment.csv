@@ -1,0 +1,10 @@
+airline_name,faa_name,region,contracted_fleet,monthly_rate_usd,stc_status,contract_year,faa_fleet
+Alaska Airlines,alaska airlines,North America,200,14000,Pending,2024,222
+American Airlines,american airlines,North America,900,15000,Pending,2024,964
+Delta Air Lines,delta air lines,North America,700,16500,Pending,2024,1099
+Emirates,emirates,Middle East,100,25000,Pending,2023,0
+International Airlines Group,british airways,Europe,300,15000,Pending,2023,0
+Lufthansa,lufthansa,Europe,300,17000,Pending,2023,0
+Qatar Airways,qatar airways,Middle East,100,25000,Pending,2023,0
+Southwest Airlines,southwest airlines,North America,817,12500,Pending,2024,738
+United Airlines,united airlines,North America,300,16500,Partial,2024,1187

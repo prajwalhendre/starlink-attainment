@@ -1,8 +1,8 @@
 # Starlink Aviation — Account Attainment & Revenue Intelligence
 
-A data engineering and business intelligence project modeling Starlink Aviation's fleet attainment gap, revenue opportunity, and account-level risk across 10 major airline partners. Built from real FAA registry data, publicly sourced contract information, a six-script Python pipeline, and a Tableau dashboard.
+A data engineering and business intelligence project modeling Starlink Aviation's fleet attainment gap, revenue opportunity, and account-level risk across 9 major airline partners. Built from real FAA registry data, publicly sourced contract information, a six-script Python pipeline, and a Tableau dashboard.
 
-**[View the Live Dashboard](https://public.tableau.com/views/StarlinkAviation-AccountAttainmentRevenueIntelligence/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
+**[View the Live Dashboard](https://public.tableau.com/app/profile/prajwal.hendre/viz/Book1_17533820297810/Dashboard1)**
 
 ---
 
@@ -12,10 +12,10 @@ Starlink Aviation is at approximately 9.3% global attainment. Out of every 100 a
 
 **Key numbers this project surfaces:**
 
-- **$699,750,000 theoretical maximum ARR**: A bottom-up model calculated as `contracted_fleet × monthly_rate_usd × 12` per airline, using contracted fleet sizes from public press releases and rates from Starlink's published aviation
+- **$691,350,000 theoretical maximum ARR**: A bottom-up model calculated as `contracted_fleet × monthly_rate_usd × 12` per airline, using contracted fleet sizes from public press releases and rates from Starlink's published aviation
 pricing. This represents the revenue ceiling if 100% of contracted aircraft were active (which they are not).
 
-- **$52,889,438 monthly revenue gap**: The difference between that ceiling and current estimated MRR, modeled at 9.3% attainment (Starlink's publicly reported global activation rate). This is the revenue sitting uncaptured every month.
+- **$52,254,538 monthly revenue gap**: The difference between that ceiling and current estimated MRR, modeled at 9.3% attainment (Starlink's publicly reported global activation rate). This is the revenue sitting uncaptured every month.
 
 - **American Airlines: $12.2M/month gap. Delta: $10.5M/month gap**: The two largest gaps in the portfolio, both flagged Critical because their STC status is fully Pending with no approved aircraft models yet.
 
@@ -27,7 +27,7 @@ pricing. This represents the revenue ceiling if 100% of contracted aircraft were
 
 The primary activation blocker is the FAA Supplemental Type Certificate (STC). Before Starlink hardware can be installed on any aircraft, the FAA must certify the installation is safe for that specific aircraft model. This process takes 8–18 months and must be completed separately for every aircraft type in an airline's fleet.
 
-United Airlines operates 16+ distinct aircraft models, each requiring its own STC. As of this writing, United has STCs approved for the Embraer 175 and Boeing 737-800, with remaining models in progress. Every other airline in this dataset has all STCs pending. This highlights the underlying issue that the revenue gap is not a sales problem but rather a regulatory pipeline problem.
+United Airlines operates 16+ distinct aircraft models, each requiring its own STC. As of this writing, United has STCs approved for the Embraer 175 and Boeing 737-800, with remaining models in progress. Every other airline in this dataset has all STCs pending, with the exception of Hawaiian Airlines (now part of Alaska Air Group). Hawaiian Airlines completed Starlink installation across its entire Airbus fleet and was the first major carrier to deploy Starlink commercially. The other airlines, however, highlight the underlying issue that the revenue gap is not a sales problem but rather a regulatory pipeline problem.
 
 ---
 
@@ -35,7 +35,7 @@ United Airlines operates 16+ distinct aircraft models, each requiring its own ST
 
 **FAA Aircraft Registry**: `https://registry.faa.gov/database/ReleasableAircraft.zip`
 
-Complete database of all US-registered civil aircraft, updated regularly by the FAA. Each row represents one physical aircraft identified by its N-number (tail number). This project downloads and parses the full registry, filtering to 10 target airlines and excluding false positives like training subsidiaries.
+Complete database of all US-registered civil aircraft, updated regularly by the FAA. Each row represents one physical aircraft identified by its N-number (tail number). This project downloads and parses the full registry, filtering to 9 target airlines and excluding false positives like training subsidiaries.
 
 Data quality challenge: the FAA registers aircraft under full legal entity names with suffixes (UNITED AIRLINES INC, BRITISH AIRWAYS PLC) while contract data uses commercial names. A direct join will fail here. The solution I implemented was fuzzy string match using `str.contains()`. This checks whether the FAA name contains the contract name as a substring.
 
@@ -58,7 +58,7 @@ I created 6 scripts to fetch and model data.
 | `03_attainment_model.py` | Fuzzy-matches FAA data to contracts using `str.contains()`, merges tables, saves `attainment.csv` |
 | `04_revenue_model.py` | Calculates current MRR, potential MRR, revenue gap, and potential ARR per airline |
 | `05_risk_flags.py` | Applies three-tier risk classification (Critical / High / Medium) using `numpy.where()` |
-| `06_export_powerbi.py` | Exports all final tables to `powerbi/` folder for Tableau import |
+| `06_export_tableau.py` | Exports all final tables to `tableau/` folder for Tableau import |
 
 ### Key Technical Decisions
 
@@ -70,7 +70,7 @@ I created 6 scripts to fetch and model data.
 
 ## The Dashboard
 
-I built my dashboard in Tableau Public.
+I built my dashboard in Tableau.
 
 **Revenue Gap**: Bar chart sorted by monthly revenue gap, colored by risk tier, with a reference line at $8,333,333 (the monthly equivalent of $100M ARR). American and Delta sit significantly above the target line.
 
@@ -99,7 +99,7 @@ python scripts/02_build_contracts.py
 python scripts/03_attainment_model.py
 python scripts/04_revenue_model.py
 python scripts/05_risk_flags.py
-python scripts/06_export_powerbi.py
+python scripts/06_export_tableau.py
 ```
 
 Script 01 downloads ~50MB from the FAA server and may take 30–60 seconds. All other scripts run in under a second.
@@ -118,8 +118,8 @@ starlink_attainment/
 │   ├── 03_attainment_model.py
 │   ├── 04_revenue_model.py
 │   ├── 05_risk_flags.py
-│   └── 06_export_powerbi.py
-├── powerbi/              ← Tableau-ready CSVs
+│   └── 06_export_tableau.py
+├── tableau/              ← Tableau-ready CSVs
 │   ├── attainment.csv
 │   ├── revenue_model.csv
 │   └── risk_classification.csv
