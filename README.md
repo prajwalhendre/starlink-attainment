@@ -2,7 +2,7 @@
 
 A data engineering and business intelligence project modeling Starlink Aviation's fleet attainment gap, revenue opportunity, and account-level risk across 8 major airline partners. Built from real FAA registry data, publicly sourced contract information, a six-script Python pipeline, and a Tableau dashboard.
 
-**[View the Live Dashboard](https://public.tableau.com/app/profile/prajwal.hendre/viz/Book1_17533820297810/Dashboard1)**
+**[View the Live Dashboard]([https://public.tableau.com/app/profile/prajwal.hendre/viz/Book1_17533820297810/Dashboard1](https://public.tableau.com/views/Book1_17533820297810/AccountAttainmentDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link))**
 
 ---
 
