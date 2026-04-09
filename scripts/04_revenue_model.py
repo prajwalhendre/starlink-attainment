@@ -10,7 +10,7 @@ revenue_data_master_path = os.path.join(PROCESSED_DIR, 'attainment.csv')
 def build_revenue_model():
     print('Build revenue model...')
     revenue_df = pd.read_csv(revenue_data_master_path, low_memory = False)
-    revenue_df['current_mrr'] = (0.093 * revenue_df['contracted_fleet'] * revenue_df['monthly_rate_usd']).round(2)
+    revenue_df['current_mrr'] = (revenue_df['attainment_rate'] * revenue_df['contracted_fleet'] * revenue_df['monthly_rate_usd']).round(2)
     revenue_df["potential_mrr"] = (revenue_df['contracted_fleet'] * revenue_df['monthly_rate_usd']).round(2)
     revenue_df["revenue_gap_mrr"] = (revenue_df['potential_mrr'] - revenue_df['current_mrr']).round(2)
     revenue_df['potential_arr'] = (revenue_df['potential_mrr'] * 12).round(2)

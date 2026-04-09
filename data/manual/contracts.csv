@@ -1,10 +1,9 @@
-airline_name,faa_name,region,contracted_fleet,monthly_rate_usd,stc_status,contract_year
-United Airlines,United Airlines,North America,300,16500,Partial,2024
-Delta Air Lines,Delta Air Lines,North America,700,16500,Pending,2024
-American Airlines,American Airlines,North America,900,15000,Pending,2024
-Southwest Airlines,Southwest Airlines,North America,817,12500,Pending,2024
-Alaska Airlines,Alaska Airlines,North America,200,14000,Pending,2024
-Qatar Airways,Qatar Airways,Middle East,100,25000,Pending,2023
-Emirates,Emirates,Middle East,100,25000,Pending,2023
-Lufthansa,Lufthansa,Europe,300,17000,Pending,2023
-International Airlines Group,British Airways,Europe,300,15000,Pending,2023
+airline_name,faa_name,region,contracted_fleet,monthly_rate_usd,stc_status,contract_year,attainment_rate
+United Airlines,United Airlines,North America,1000,16500,Partial,2024,0.3
+American Airlines,American Airlines,North America,900,15000,Prospective,2024,0.0
+Southwest Airlines,Southwest Airlines,North America,300,12500,Pending,2026,0.0
+Alaska Air Group,Alaska Airlines,North America,400,14000,Partial,2024,0.125
+Qatar Airways,Qatar Airways,Middle East,120,25000,Partial,2024,1.0
+Emirates,Emirates,Middle East,232,25000,Partial,2025,0.3
+Lufthansa Group,Lufthansa,Europe,850,17000,Pending,2026,0.0
+International Airlines Group,British Airways,Europe,500,15000,Partial,2025,0.004

@@ -1,10 +1,9 @@
-airline_name,faa_name,region,contracted_fleet,monthly_rate_usd,stc_status,contract_year,faa_fleet,current_mrr,potential_mrr,revenue_gap_mrr,potential_arr
-Alaska Airlines,alaska airlines,North America,200,14000,Pending,2024,222,260400.0,2800000,2539600.0,33600000
-American Airlines,american airlines,North America,900,15000,Pending,2024,964,1255500.0,13500000,12244500.0,162000000
-Delta Air Lines,delta air lines,North America,700,16500,Pending,2024,1099,1074150.0,11550000,10475850.0,138600000
-Emirates,emirates,Middle East,100,25000,Pending,2023,0,232500.0,2500000,2267500.0,30000000
-International Airlines Group,british airways,Europe,300,15000,Pending,2023,0,418500.0,4500000,4081500.0,54000000
-Lufthansa,lufthansa,Europe,300,17000,Pending,2023,0,474300.0,5100000,4625700.0,61200000
-Qatar Airways,qatar airways,Middle East,100,25000,Pending,2023,0,232500.0,2500000,2267500.0,30000000
-Southwest Airlines,southwest airlines,North America,817,12500,Pending,2024,738,949762.5,10212500,9262737.5,122550000
-United Airlines,united airlines,North America,300,16500,Partial,2024,1187,460350.0,4950000,4489650.0,59400000
+airline_name,faa_name,region,contracted_fleet,monthly_rate_usd,stc_status,contract_year,attainment_rate,faa_fleet,current_mrr,potential_mrr,revenue_gap_mrr,potential_arr
+Alaska Air Group,alaska airlines,North America,400,14000,Partial,2024,0.125,222,700000.0,5600000,4900000.0,67200000
+American Airlines,american airlines,North America,900,15000,Prospective,2024,0.0,964,0.0,13500000,13500000.0,162000000
+Emirates,emirates,Middle East,232,25000,Partial,2025,0.3,0,1740000.0,5800000,4060000.0,69600000
+International Airlines Group,british airways,Europe,500,15000,Partial,2025,0.004,0,30000.0,7500000,7470000.0,90000000
+Lufthansa Group,lufthansa,Europe,850,17000,Pending,2026,0.0,0,0.0,14450000,14450000.0,173400000
+Qatar Airways,qatar airways,Middle East,120,25000,Partial,2024,1.0,0,3000000.0,3000000,0.0,36000000
+Southwest Airlines,southwest airlines,North America,300,12500,Pending,2026,0.0,738,0.0,3750000,3750000.0,45000000
+United Airlines,united airlines,North America,1000,16500,Partial,2024,0.3,1187,4950000.0,16500000,11550000.0,198000000

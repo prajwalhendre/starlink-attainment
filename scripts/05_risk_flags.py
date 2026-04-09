@@ -13,12 +13,16 @@ def risk_classification():
     print('Reading in revenue_model.csv')
     revenue_df = pd.read_csv(master_path, low_memory= False)
     revenue_df['risk_flag'] = np.where(
-        (revenue_df['stc_status'] == 'Pending') & (revenue_df['revenue_gap_mrr'] > 10000000),
-        'Critical',
+        (revenue_df['stc_status'] == 'Prospective') & (revenue_df['revenue_gap_mrr'] > 10000000),
+        'Competitive Risk',
         np.where(
-            (revenue_df['stc_status'] == 'Pending') | (revenue_df['revenue_gap_mrr'] > 5000000),
-            'High',
-            'Medium'
+            (revenue_df['stc_status'] == 'Pending') & (revenue_df['revenue_gap_mrr'] > 10000000),
+            'Critical',
+            np.where(
+                (revenue_df['stc_status'] == 'Pending') | (revenue_df['revenue_gap_mrr'] > 5000000),
+                'High',
+                'Medium'
+            )
         )
     )
     output_path = os.path.join(PROCESSED_DIR, 'risk_classification.csv')
